@@ -1,0 +1,71 @@
+name: OpenCodePulse
+
+packages:
+  Sparkle:
+    url: https://github.com/sparkle-project/Sparkle
+    from: 2.7.0
+
+options:
+  bundleIdPrefix: com.opencode.pulse
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "16"
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    PRODUCT_BUNDLE_IDENTIFIER: com.opencode.pulse.app
+    MARKETING_VERSION: "1.0.1"
+    CURRENT_PROJECT_VERSION: "2"
+    ENABLE_HARDENED_RUNTIME: YES
+  configs:
+    Debug:
+      CODE_SIGN_STYLE: Automatic
+      DEVELOPMENT_TEAM: AUEPCDGA5G
+      CODE_SIGN_IDENTITY: Apple Development
+    Release:
+      CODE_SIGN_STYLE: Manual
+      DEVELOPMENT_TEAM: AUEPCDGA5G
+      CODE_SIGN_IDENTITY: "Developer ID Application"
+      PROVISIONING_PROFILE_SPECIFIER: ""
+      ARCHS: "arm64 x86_64"
+
+targets:
+  OpenCodePulse:
+    type: application
+    platform: macOS
+    deploymentTarget: "14.0"
+    sources:
+      - path: OpenCodePulse
+        excludes:
+          - "**/*.md"
+    resources:
+      - OpenCodePulse/Assets.xcassets
+    info:
+      path: OpenCodePulse/Info.plist
+      properties:
+        LSUIElement: true
+        CFBundleDisplayName: OpenCode Pulse
+        CFBundleShortVersionString: "1.0.1"
+        CFBundleVersion: "2"
+        NSHumanReadableCopyright: "Copyright © 2025 OpenCode Pulse"
+        NSPrincipalClass: NSApplication
+        LSApplicationCategoryType: "public.app-category.developer-tools"
+        SUFeedURL: "https://raw.githubusercontent.com/keranm/openCodePulse/main/appcast.xml"
+        SUEnableAutomaticChecks: true
+        SUPublicEDKey: "0N8+0Z5XqMfyh0YH0stI9h7/7bf6qq0XmMzcQgXUzEQ="
+    entitlements:
+      path: OpenCodePulse/OpenCodePulse.entitlements
+    dependencies:
+      - package: Sparkle
+        product: Sparkle
+    settings:
+      base:
+        PRODUCT_NAME: OpenCodePulse
+        INFOPLIST_FILE: OpenCodePulse/Info.plist
+        CODE_SIGN_ENTITLEMENTS: OpenCodePulse/OpenCodePulse.entitlements
+        SWIFT_EMIT_LOC_STRINGS: YES
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor

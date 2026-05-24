@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>OpenCode Pulse</title>
+    <link>https://raw.githubusercontent.com/keranm/openCodePulse/main/appcast.xml</link>
+    <description>OpenCode Pulse update feed</description>
+    <language>en</language>
+
+    <item>
+      <title>OpenCode Pulse 1.0.1</title>
+      <pubDate>Sun, 25 May 2026 12:00:00 +0000</pubDate>
+      <sparkle:version>2</sparkle:version>
+      <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+      <sparkle:minimumSystemVersion>14.0</sparkle:minimumSystemVersion>
+      <enclosure
+        url="https://github.com/keranm/openCodePulse/releases/download/v1.0.1/OpenCodePulse-1.0.1.zip"
+        sparkle:edSignature="JQTP3tpw13T3gsJ1ulwaM24+u5wp985hMrU+VMG59K9YP4oHkqovkaOm33SYs9aVPLKHX8q/H+qyamvvfZuFBQ=="
+        length="2722831"
+        type="application/octet-stream"/>
+    </item>
+
+  </channel>
+</rss>
